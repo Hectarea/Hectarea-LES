@@ -17,5 +17,4 @@ setup(
     author_email = 'gonzalez.craqenll@gmail.com',
     url = 'https://hectarea.netlify.app/',
     keywords = ['Encryption', 'Dictionary', 'Hectarea', 'Secrets'],
-   ,)
- #download_url= 'https://github.com/Hectarea/DictionaryEncryption/archive/refs/tags/4.20.68.2.tar.gz'
+    download_url= 'https://github.com/Hectarea/Hectarea-LES/archive/refs/tags/69.4.19.tar.gz',)
