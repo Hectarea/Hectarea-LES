@@ -1,69 +1,51 @@
 
-# Hectarea Dictionary Encryption
+# Hectarea Loop Encryption System
 
 
 
-Encryption algorithm by Hectarea and Qrab & Nell, made to securely transmit messages using a key, an IV, and a dictionary of 256 words, representing the 8 bits of a byte.
+Encryption algorithm by Hectarea and Qrab & Nell, based on 16 function blocks that process and de-process individual bytes.
 
-It returns a natural-lenguage-lilke sentence made with words of the given dictionary. each representing a byte of the encrypted object.
+Each function block is randomly selected based on the (iv+(password[(nonce+index)%len(password)]))%(2**3), to guarentee a 
+criptographically safe random output.
+
+It accepts a byte array as input and another byte array with the same length as output.
 
 
 ## Installation
 
 ```bash
-pip install HectareaDictionaryEncryption  
+pip install HectareaLES  
 ```
 
 ## Basic Example
 ```python
+from HectareaLES import LES
 
-import HectareaDictionaryEncryption as hdc
+#Initialize the LES class
+LES = LES()
 
+#Parameters:
 
-# Dictionary with 256 words
+#Byte array to encrypt
+secret_message = b'i know what the dog is doing'
 
-dictionary = 
-['the', 'of', 'to', 'and', 'a', 'in', 'is', 'it', 'you', 'that', 'he', 'was', 'for', 'on', 'are', 'with', 'as', 'I', 'his', 'they', 'be', 'at', 'one', 'have', 'this', 'from', 'or', 'had', 'by', 'not', 
-'word', 'but', 'what', 'some', 'we', 'can', 'out', 'other', 'were', 'all', 'there', 'when', 'up', 'use', 'your', 'how', 'said', 'an', 
-'each', 'she', 'which', 'do', 'their', 'time', 'if', 'will', 'way', 'about', 'many', 'then', 'them', 'write', 'would', 'like', 'so', 'these', 'her', 'long', 'make', 'thing', 'see', 'him', 'two', 'has', 'look', 'more', 'day', 'could', 'go', 'come', 'did', 'number', 'sound', 'no', 'most', 'people', 'my', 'over', 'know', 'water', 'than', 'call', 'first', 'who', 'may', 'down', 'side', 'been', 'now', 'find', 'any', 'new', 'work', 'part', 'take', 'get', 'place', 'made', 
-'live', 'where', 'after', 'back', 'little', 'only', 'round', 'man', 'year', 'came', 'show', 'every', 'good', 'me', 'give', 'our', 'under', 'name', 'very', 'through', 'just', 'form', 'sentence', 'great', 'think', 'say', 'help', 'low', 'line', 'differ', 'turn', 'cause', 'much', 'mean', 'before', 'move', 'right', 'boy', 'old', 'too', 'same', 'tell', 'does', 'set', 'three', 'want', 'air', 'well', 'also', 'play', 'small', 'end', 'put', 'home', 'read', 'hand', 'port', 'large', 'spell', 'add', 'even', 'land', 'here', 'must', 'big', 'high', 'such', 'follow', 'act', 'why', 'ask', 'men', 'change', 'went', 
-'light', 'kind', 'off', 'need', 'house', 'picture', 'try', 'us', 'again', 'animal', 'point', 'mother', 'world', 'near', 'build', 'self', 'earth', 'father', 'head', 'stand', 'own', 'page', 'should', 'country', 'found', 'answer', 'school', 'grow', 'study', 'still', 'learn', 'plant', 'cover', 'food', 'sun', 'four', 'between', 'state', 'keep', 'eye', 'never', 'last', 'let', 'thought', 'city', 'tree', 'cross', 'farm', 'hard', 'start', 'might', 'story', 'saw', 'far', 'sea', 'draw', 'left', 'late', 'run', "don't", 'while', 'press', 'close', 'night', 'real', 'life', 'few', 'north', 'open', 'seem', 'together', 'next', 'white', 'children']
+#Any length password
+password = b'random length password'
 
+#Any length iv
+iv = b'random length initial value'
 
-# Any length encoded password
-
-password = b'any length password'
-
-
-# Any length IV
-
-iv = b'some random length IV'
+#Any length nonce
+nonce = b'some random nonce'
 
 
-# Any length encoded message
+#Returns the encrypted byte array
+EncryptedBytes = LES.encrypt(secret_message, password, iv, nonce)
 
-message = b'I know what amber heard...'
+print("\nEncrypted ByteArray: \n" + str(EncryptedBytes))
 
+#Returns the original byte array
+DecryptedBytes = LES.decrypt(EncryptedBytes, password, iv, nonce)
 
-# Returns a string
-encryptedString = hdc.Encrypt(message, iv, password, dictionary)
-
-print("Encrypted String: \n" + encryptedString  + "\n")
-print("IV: \n" + iv.decode() + "\n\n")
-
-# Returns a bytes object
-decryptedString = hdc.Decrypt(encryptedString, iv, password, dictionary)
-
-print("Decrypted String: \n" + decryptedString.decode() + "\n")
-```
-### Result:
-```bash
-Encrypted String:                                                                                                       
-last be I said kind new be I side number their point life with a down try live the seem people this out show by we
-
-IV:                                                                                                                     
-some random length IV 
-
-Decrypted and Decoded String:                                                                                                       
-I know what amber heard... 
+print("\nDecrypted ByteArray: \n" + str(DecryptedBytes))
 ```
