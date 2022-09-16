@@ -55,7 +55,7 @@ print("\nDecrypted ByteArray: \n" + str(DecryptedBytes))
 ```bash
 
 Encrypted ByteArray:
-b'\x1a \xce&\x84\x13\xbc\x13\xcfat\x98D\x84\xf4@\x83\x89ZXi\x0f\xd1d\xd2!\x83\x03'      
+b'j3knowj\x92Xlj?t#V s\xa0\xcd Uv\xdado\x84]g'
 
 Decrypted ByteArray:
 b'i know what the dog is doing'
