@@ -12,7 +12,7 @@ class LES:
         tempArray = b''
 
         for index in range(len(xArray)):
-            tempArray += bytes([self.ProcessingBlocks[password%(2**3)](xArray[index], password, password+iv, (password+index+(nonce%len(password)))%(len(password)))])
+            tempArray += bytes([self.ProcessingBlocks[(int.from_bytes(iv, 'big')+(password[(nonce+index)%len(password)]))%(2**3)](xArray[index], password,  password+iv, (int.from_bytes(password, 'big')+index+(nonce%len(password)))%(len(password)))])
 
         return tempArray
     
@@ -23,7 +23,7 @@ class LES:
         tempArray = b''
 
         for index in range(len(xArray)):
-            tempArray += bytes([self.DeProcessingBlocks[password%(2**3)](xArray[index], password, password+iv, (password+index+(nonce%len(password)))%(len(password)))])
+            tempArray += bytes([self.DeProcessingBlocks[(int.from_bytes(iv, 'big')+(password[(nonce+index)%len(password)]))%(2**3)](xArray[index], password, password+iv, (int.from_bytes(password, 'big')+index+(nonce%len(password)))%(len(password)))])
 
         return tempArray
 
