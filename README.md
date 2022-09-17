@@ -2,7 +2,6 @@
 # Hectarea's Pizza Encryption Standard
 
 
-
 Pizza Encryption Standard is an encryption algorithm made by [Hectarea](https://hectarea.netlify.app) and [Qrab & Nell](https://qrabnell.netlify.app), based on the steps that you need to make a pizza.
 
 The password is the Sauce, the Initial Value are the ingredients like cheese, pepperoni, peppers and onion, and the Plain Text is the Pizza Dough
@@ -32,13 +31,13 @@ pip install HectareaPES
 ```python
 from HectareaPES import PaneraPizza
 
-
+#Encoded Plain Text
 PizzaDough = b"How Big Are Panera's Flatbread Pizzas? Panera's pizzas are square-shaped and they're the perfect size for a personal pizza. They're about 11-inches long by 4-inches wide, and they're usually cut into 6 small squares, which makes it easy for portioning."
 
-
+#Encoded Initial Value
 Ingredients = b'Pepperoni Initial Value'
 
-
+#Encoded Password
 Sauce = b'Random Password'
 
 
