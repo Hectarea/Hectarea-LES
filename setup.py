@@ -17,4 +17,4 @@ setup(
     author_email = 'gonzalez.craqenll@gmail.com',
     url = 'https://hectarea.netlify.app/',
     keywords = ['Encryption', 'Pizza', 'Hectarea', 'Panera'],
-    download_url= 'https://github.com/Hectarea/Hectarea-PES/archive/refs/tags/69.4.19.9.9.tar.gz',)
+    download_url= 'https://github.com/Hectarea/Hectarea-PES/archive/refs/tags/69.4.19.99.tar.gz',)
