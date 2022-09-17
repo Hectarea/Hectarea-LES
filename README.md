@@ -53,7 +53,7 @@ SeasonedPizza = PaneraPizza.Mix(RolledDough, Sauce)
 FrozenPizza = PaneraPizza.Freezer(SeasonedPizza, Sauce)
 
 
-print("\nCipherText: "+str(FrozenPizza))
+print("\nCipherText: \n"+str(FrozenPizza))
 
 
 
@@ -69,13 +69,13 @@ PizzaSlices = PaneraPizza.Cutter(BakedPizza, Sauce)
 PizzaSlice = PaneraPizza.Turner(PizzaSlices, Sauce, Ingredients)
 
 
-print("\nPlainText: "+str(PizzaSlice))
+print("\nPlainText: \n"+str(PizzaSlice))
 ```
 # Result
 ```
-
 CipherText: bytearray(b"\x88\x96\xa3\xa5ca\x17\xa4\x96\xa2x\xba\x85\xabX<l\xc3\x9f\x97\xb5\x16.\xa0\x94\xbf|\xb2\xb9Ejsi\x9b\xa8f\x0fq{\xb8\xa2\xd0\xc6\xb7\x8b2CI\x9e\xa4\xa4\'H\x85go\xb2\xb7\xc2\xa80\xa3a\xaf\xb1\xb9,p\x98g\xa6\xa9\x99mZ~\x88\xa9\xa8nK\x1f\x0bP\xb0g\xc2\x8c\xaaPM\x90\xb9\xa4\x99\x9a\xd0p\x86\xc6\xbdv\xb1e\xbf~\x9a\x92\xa3\xa6\xb3l\x88\x8c\xbd\xb9.\x14\xa0~8\xa5\x8c`\xbe\\q{\x92\xc2\xc1\xb7R\xbdQ\x90]x\x98_\x8b\x13\x82\xab\xac\xbdzt\x9cI\x85\x97a\xa5\x1ew\x19s\x9d\xb9\xc9\xca\xc3\x99\x8b{\x97eX\xa8\x1a\xca.\x9d\xaez\xa6s\xc7\x9b\x80\x8f\xafE\xaf\x1a\xea|\x93\xc3\xd1\xb7\xa1}\xa2w\x93q1\xbc\xb4\x11|\x99u\xb3\xbf_x\xa0{\x90\xc4\xa9N|\x80i\x88\xc7\xb8\xbf\xbf\xbc\x9c\x89\x98\xc0I_o\x80`\x88\xbd\xbe\xbf\xac\xbd]e\x93\xbbZ\xb2\x9e\xc5u\xa0\xd1\xb5}")
 
 
-PlainText: bytearray(b"How Big Are Panera\'s Flatbread Pizzas? Panera\'s pizzas are square-shaped and they\'re the perfect size for a personal pizza. They\'re about 11-inches long by 4-inches wide, and they\'re usually cut into 6 small squares, which makes it easy for portioning.")
+PlainText: 
+bytearray(b"How Big Are Panera\'s Flatbread Pizzas? Panera\'s pizzas are square-shaped and they\'re the perfect size for a personal pizza. They\'re about 11-inches long by 4-inches wide, and they\'re usually cut into 6 small squares, which makes it easy for portioning.")
 ```
