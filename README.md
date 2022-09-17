@@ -4,7 +4,7 @@
 
 Pizza Encryption Standard is an encryption algorithm made by [Hectarea](https://hectarea.netlify.app) and [Qrab & Nell](https://qrabnell.netlify.app), based on the steps that you need to make a pizza.
 
-The password is the Sauce, the Initial Value are the ingredients like cheese, pepperoni, peppers and onion, and the Plain Text is the Pizza Dough
+The password is the Sauce, the Initial Value is the ingredients like cheese, pepperoni, peppers, and onion, and the Plain Text is the Pizza Dough
 
 # The steps are simple
 
