@@ -27,7 +27,9 @@ The password is the Sauce, the Initial Value are the ingredients like cheese, pe
 pip install HectareaPES
 ```
 
-## Basic Example
+# Basic Example
+
+## Import the PaneraPizza class
 ```python
 from HectareaPES import PaneraPizza
 
