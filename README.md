@@ -21,10 +21,6 @@ The password is the Sauce, the Initial Value are the ingredients like cheese, pe
 * Finally the Initial Value and the Password de-obfuscate the CipherText into the original Byte Array
 
 
-
-It accepts a byte array as input and another byte array with the same length as output.
-
-
 ## Installation
 
 ```bash
