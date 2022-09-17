@@ -1,12 +1,15 @@
 
-# Hectarea Loop Encryption System
+# Hectarea's Pizza Encryption Standard
 
 
 
-Encryption algorithm by Hectarea and Qrab & Nell, based on 16 function blocks that process and de-process individual bytes.
+Pizza Encryption Standard is an encryption algorithm made by Hectarea and [Qrab & Nell](https://qrabnell.netlify.app), based on the steps that you need to make a pizza.
 
-Each function block is randomly selected based on the (iv+(password[(nonce+index)%len(password)]))%(2**3), to guarentee a 
-criptographically safe random output.
+The password is the Sauce, the Initial Value are the ingredients like cheese, pepperoni, peppers and onion, and the Plain Text is the Pizza Dough
+
+#The steps are simple
+
+* The Initial Value and the Password obfuscate each byte of the plain text
 
 It accepts a byte array as input and another byte array with the same length as output.
 
@@ -14,50 +17,65 @@ It accepts a byte array as input and another byte array with the same length as 
 ## Installation
 
 ```bash
-pip install HectareaLES  
+pip install HectareaPES
 ```
 
 ## Basic Example
 ```python
-from HectareaLES import LES
+from HectareaPES import PaneraPizza
 
-#Initialize the LES class
-LES = LES()
+```
+##Plain Text
+```python
+PizzaDough = b"How Big Are Panera's Flatbread Pizzas? Panera's pizzas are square-shaped and they're the perfect size for a personal pizza. They're about 11-inches long by 4-inches wide, and they're usually cut into 6 small squares, which makes it easy for portioning."
 
-#Parameters:
+```
+##Initial Value
+```python
 
-#Byte array to encrypt
-secret_message = b'i know what the dog is doing'
-
-#Any length password
-password = b'random length password'
-
-#Any length iv
-iv = b'random length initial value'
-
-#Any length nonce
-nonce = b'some random nonce'
+Ingredients = b'Pepperoni Initial Value'
 
 
-#Returns the encrypted byte array
-EncryptedBytes = LES.encrypt(secret_message, password, iv, nonce)
+```
+##Password
+```python
 
-print("\nEncrypted ByteArray: \n" + str(EncryptedBytes))
+Sauce = b'Random Password'
 
-#Returns the original byte array
-DecryptedBytes = LES.decrypt(EncryptedBytes, password, iv, nonce)
 
-print("\nDecrypted ByteArray: \n" + str(DecryptedBytes))
+```
+##Encryption
+```python
+RolledDough = PaneraPizza.RollingPin(PizzaDough, Sauce, Ingredients)
+
+
+SeasonedPizza = PaneraPizza.Mix(RolledDough, Sauce)
+
+
+FrozenPizza = PaneraPizza.Freezer(SeasonedPizza, Sauce)
+
+
+print("\nCipherText: "+str(FrozenPizza))
+
+```
+CipherText: bytearray(b"\x88\x96\xa3\xa5ca\x17\xa4\x96\xa2x\xba\x85\xabX<l\xc3\x9f\x97\xb5\x16.\xa0\x94\xbf|\xb2\xb9Ejsi\x9b\xa8f\x0fq{\xb8\xa2\xd0\xc6\xb7\x8b2CI\x9e\xa4\xa4\'H\x85go\xb2\xb7\xc2\xa80\xa3a\xaf\xb1\xb9,p\x98g\xa6\xa9\x99mZ~\x88\xa9\xa8nK\x1f\x0bP\xb0g\xc2\x8c\xaaPM\x90\xb9\xa4\x99\x9a\xd0p\x86\xc6\xbdv\xb1e\xbf~\x9a\x92\xa3\xa6\xb3l\x88\x8c\xbd\xb9.\x14\xa0~8\xa5\x8c`\xbe\\q{\x92\xc2\xc1\xb7R\xbdQ\x90]x\x98_\x8b\x13\x82\xab\xac\xbdzt\x9cI\x85\x97a\xa5\x1ew\x19s\x9d\xb9\xc9\xca\xc3\x99\x8b{\x97eX\xa8\x1a\xca.\x9d\xaez\xa6s\xc7\x9b\x80\x8f\xafE\xaf\x1a\xea|\x93\xc3\xd1\xb7\xa1}\xa2w\x93q1\xbc\xb4\x11|\x99u\xb3\xbf_x\xa0{\x90\xc4\xa9N|\x80i\x88\xc7\xb8\xbf\xbf\xbc\x9c\x89\x98\xc0I_o\x80`\x88\xbd\xbe\xbf\xac\xbd]e\x93\xbbZ\xb2\x9e\xc5u\xa0\xd1\xb5}")
 ```
 
-## Result
+```
+##Decryption
+```python
 
-```bash
+BakedPizza = PaneraPizza.Oven(FrozenPizza, Sauce)
 
-Encrypted ByteArray:
-b'j3knowj\x92Xlj?t#V s\xa0\xcd Uv\xdado\x84]g'
 
-Decrypted ByteArray:
-b'i know what the dog is doing'
+PizzaSlices = PaneraPizza.Cutter(BakedPizza, Sauce)
 
+
+PizzaSlice = PaneraPizza.Turner(PizzaSlices, Sauce, Ingredients)
+
+
+print("\nPlainText: "+str(PizzaSlice))
+```
+```
+PlainText: bytearray(b"How Big Are Panera\'s Flatbread Pizzas? Panera\'s pizzas are square-shaped and they\'re the perfect size for a personal pizza. They\'re about 11-inches long by 4-inches wide, and they\'re usually cut into 6 small squares, which makes it easy for portioning.")
 ```
