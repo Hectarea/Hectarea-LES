@@ -7,7 +7,7 @@ Pizza Encryption Standard is an encryption algorithm made by [Hectarea](https://
 
 The password is the Sauce, the Initial Value are the ingredients like cheese, pepperoni, peppers and onion, and the Plain Text is the Pizza Dough
 
-#The steps are simple
+# The steps are simple
 
 * The Initial Value and the Password obfuscate each byte of the plain text
 
