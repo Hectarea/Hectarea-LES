@@ -9,7 +9,18 @@ The password is the Sauce, the Initial Value are the ingredients like cheese, pe
 
 # The steps are simple
 
+### Encryption
 * The Initial Value and the Password obfuscate each byte of the plain text
+* The Password randomly switches the position between pairs of Bytes inside the Byte Array
+* The Password encrypts the individual bytes of the mixed-up Byte Array
+* The Frozen Pizza is ready to deliver
+
+### Decryption
+* The Password decrypts individual bytes of the Frozen Pizza
+* The Password switches the pairs of bytes back into their original position
+* Finally the Initial Value and the Password de-obfuscate the CipherText into the original Byte Array
+
+
 
 It accepts a byte array as input and another byte array with the same length as output.
 
