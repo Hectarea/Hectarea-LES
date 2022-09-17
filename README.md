@@ -25,26 +25,26 @@ pip install HectareaPES
 from HectareaPES import PaneraPizza
 
 ```
-##Plain Text
+## Plain Text
 ```python
 PizzaDough = b"How Big Are Panera's Flatbread Pizzas? Panera's pizzas are square-shaped and they're the perfect size for a personal pizza. They're about 11-inches long by 4-inches wide, and they're usually cut into 6 small squares, which makes it easy for portioning."
 
 ```
-##Initial Value
+## Initial Value
 ```python
 
 Ingredients = b'Pepperoni Initial Value'
 
 
 ```
-##Password
+## Password
 ```python
 
 Sauce = b'Random Password'
 
 
 ```
-##Encryption
+## Encryption
 ```python
 RolledDough = PaneraPizza.RollingPin(PizzaDough, Sauce, Ingredients)
 
@@ -62,7 +62,7 @@ CipherText: bytearray(b"\x88\x96\xa3\xa5ca\x17\xa4\x96\xa2x\xba\x85\xabX<l\xc3\x
 ```
 
 ```
-##Decryption
+## Decryption
 ```python
 
 BakedPizza = PaneraPizza.Oven(FrozenPizza, Sauce)
